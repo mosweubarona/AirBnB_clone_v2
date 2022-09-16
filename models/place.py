@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Defines the Place class."""
+"""Defines the Place class"""
 import models
 from os import getenv
 from models.base_model import Base
@@ -29,9 +29,9 @@ class Place(BaseModel, Base):
     Inherits from SQLAlchemy Base and links to the MySQL table places.
     Attributes:
         __tablename__ (str): The name of the MySQL table to store places.
-        city_id (sqlalchemy String): The place's city id.
-        user_id (sqlalchemy String): The place's user id.
-        name (sqlalchemy String): The name.
+        city_id (sqlalchemy String): The place's city id
+        user_id (sqlalchemy String): The place's user id
+        name (sqlalchemy String): The name
         description (sqlalchemy String): The description.
         number_rooms (sqlalchemy Integer): The number of rooms.
         number_bathrooms (sqlalchemy Integer): The number of bathrooms.
@@ -71,7 +71,7 @@ class Place(BaseModel, Base):
 
         @property
         def amenities(self):
-            """Get/set linked Amenities."""
+            """Get/set linked Amenities"""
             amenity_list = []
             for amenity in list(models.storage.all(Amenity).values()):
                 if amenity.id in self.amenity_ids:
