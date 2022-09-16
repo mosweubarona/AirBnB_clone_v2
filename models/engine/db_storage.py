@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Defines the DBStorage engine."""
+"""Defines the DBStorage engine"""
 from os import getenv
 from models.base_model import Base
 from models.base_model import BaseModel
@@ -38,7 +38,7 @@ class DBStorage:
 
     def all(self, cls=None):
         """Query on the curret database session all objects of the given class.
-        If cls is None, queries all types of objects.
+        If cls is None, queries all objects.
         Return:
             Dict of queried classes in the format <class name>.<obj id> = obj.
         """
