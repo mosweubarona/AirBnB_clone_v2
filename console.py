@@ -42,11 +42,11 @@ class HBNBCommand(cmd.Cmd):
         try:
             if not line:
                 raise SyntaxError()
-            my_list = line.split(" ")  # split cmd line into list
+            my_list = line.split(" ")
 
-            if my_list:  # if list not empty
-                cls_name = my_list[0]  # extract class name
-            else:  # class name missing
+            if my_list:
+                cls_name = my_list[0]
+            else:
                 raise SyntaxError()
 
             kwargs = {}
