@@ -1,18 +1,8 @@
 #!/usr/bin/python3
-<<<<<<< HEAD
 """This is the review class"""
 from sqlalchemy.ext.declarative import declarative_base
 from models.base_model import BaseModel, Base
 from sqlalchemy import Column, Integer, String, ForeignKey, Float
-=======
-"""Defines the Review class."""
-from models.base_model import BaseModel
-from models.base_model import Base
-from sqlalchemy import Column
-from sqlalchemy import ForeignKey
-from sqlalchemy import String
-from sqlalchemy.orm import relationship
->>>>>>> ed22cba71bdae61de0a47cacd08c691e782a1e52
 
 
 class Review(BaseModel, Base):
