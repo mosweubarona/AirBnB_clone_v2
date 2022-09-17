@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Defines the User class."""
+"""Defines the User class in database"""
 from models.base_model import Base
 from models.base_model import BaseModel
 from sqlalchemy import Column
@@ -20,9 +20,10 @@ class User(BaseModel, Base):
         reviews (sqlalchemy relationship): The User-Review relationship.
     """
     __tablename__ = "users"
+
     email = Column(String(128), nullable=False)
     password = Column(String(128), nullable=False)
     first_name = Column(String(128))
     last_name = Column(String(128))
-    places = relationship("Place", backref="user", cascade="delete")
-    reviews = relationship("Review", backref="user", cascade="delete")
+    places = relationship("Place", backref="user", cascade="all, delete")
+    reviews = relationship("Review", backref="user", cascade="all, delete")

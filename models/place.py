@@ -1,8 +1,24 @@
 #!/usr/bin/python3
+<<<<<<< HEAD
 """This is the place class"""
 from sqlalchemy.ext.declarative import declarative_base
 from models.base_model import BaseModel, Base
 from sqlalchemy import Column, Table, String, Integer, Float, ForeignKey
+=======
+"""Defines the Place class"""
+import models
+from os import getenv
+from models.base_model import Base
+from models.base_model import BaseModel
+from models.amenity import Amenity
+from models.review import Review
+from sqlalchemy import Column
+from sqlalchemy import Float
+from sqlalchemy import ForeignKey
+from sqlalchemy import Integer
+from sqlalchemy import String
+from sqlalchemy import Table
+>>>>>>> ed22cba71bdae61de0a47cacd08c691e782a1e52
 from sqlalchemy.orm import relationship
 from os import getenv
 import models
@@ -22,6 +38,7 @@ place_amenity = Table("place_amenity", Base.metadata,
 class Place(BaseModel, Base):
     """This is the class for Place
     Attributes:
+<<<<<<< HEAD
         city_id: city id
         user_id: user id
         name: name input
@@ -33,6 +50,22 @@ class Place(BaseModel, Base):
         latitude: latitude in flaot
         longitude: longitude in float
         amenity_ids: list of Amenity ids
+=======
+        __tablename__ (str): The name of the MySQL table to store places.
+        city_id (sqlalchemy String): The place's city id
+        user_id (sqlalchemy String): The place's user id
+        name (sqlalchemy String): The name
+        description (sqlalchemy String): The description.
+        number_rooms (sqlalchemy Integer): The number of rooms.
+        number_bathrooms (sqlalchemy Integer): The number of bathrooms.
+        max_guest (sqlalchemy Integer): The maximum number of guests.
+        price_by_night (sqlalchemy Integer): The price by night.
+        latitude (sqlalchemy Float): The place's latitude.
+        longitude (sqlalchemy Float): The place's longitude.
+        reviews (sqlalchemy relationship): The Place-Review relationship.
+        amenities (sqlalchemy relationship): The Place-Amenity relationship.
+        amenity_ids (list): An id list of all linked amenities.
+>>>>>>> ed22cba71bdae61de0a47cacd08c691e782a1e52
     """
     __tablename__ = "places"
     city_id = Column(String(60), ForeignKey("cities.id"), nullable=False)
@@ -73,8 +106,17 @@ class Place(BaseModel, Base):
 
         @property
         def amenities(self):
+<<<<<<< HEAD
             """ Returns list of amenity ids """
             return self.amenity_ids
+=======
+            """Get/set linked Amenities"""
+            amenity_list = []
+            for amenity in list(models.storage.all(Amenity).values()):
+                if amenity.id in self.amenity_ids:
+                    amenity_list.append(amenity)
+            return amenity_list
+>>>>>>> ed22cba71bdae61de0a47cacd08c691e782a1e52
 
         @amenities.setter
         def amenities(self, obj=None):

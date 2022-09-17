@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """Instantiates a storage object.
 -> If the environmental variable 'HBNB_TYPE_STORAGE' is set to 'db',
-   instantiates a database storage engine (DBStorage).
+   instantiates a database storage (DBStorage).
 -> Otherwise, instantiates a file storage engine (FileStorage).
 """
 from os import getenv
