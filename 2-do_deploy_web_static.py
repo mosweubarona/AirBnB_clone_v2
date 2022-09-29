@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Distributes archived pack to both web serversw
+Distributes archived pack to both web servers
 """
 
 import os.path
