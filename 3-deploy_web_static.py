@@ -20,6 +20,7 @@ def do_pack():
     if createArchive.succeeded:
         return filePath
 
+
 def do_deploy(archive_path):
     """Distributes an archive to a web server.
     """
@@ -73,6 +74,7 @@ def do_deploy(archive_path):
 
     print("New version deployed!")
     return True
+
 
 def deploy():
     """pack web_static content and deploy it to web servers
