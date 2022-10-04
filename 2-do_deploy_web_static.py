@@ -4,6 +4,7 @@ Distributes archived pack to both web serversw
 """
 
 import os.path
+import fabric
 from fabric.api import env, put, run
 
 env.user = "ubuntu"
